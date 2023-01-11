@@ -32,7 +32,7 @@ public class MainViewController implements Initializable {
 		System.out.println("onMenuItemSellerAction");
 	}
 	
-	@FXML
+	@FXML // funcao de inicializacao com funcao lambda.
 	public void onMenuItemDepartmentAction() {
 		loadView("/gui/DepartmentList.fxml", (DepartmentListController controller) -> {
 			controller.setDepartmentService(new DepartmentService());
@@ -64,7 +64,7 @@ public class MainViewController implements Initializable {
 		mainVBox.getChildren().add(mainMenu);
 		mainVBox.getChildren().addAll(newVbox.getChildren());
 		
-		
+		// comando para ativa funcao genric onMenuItemDepartmentAction
 		T controller = loader.getController();
 		initializingAction.accept(controller);
 		}
